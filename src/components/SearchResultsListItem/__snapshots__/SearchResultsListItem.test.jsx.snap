@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultsListItem component renders SearchResultsListItem 1`] = `
+<li
+  key="idstring"
+>
+  <Link
+    to="./Radiohead"
+  >
+    Radiohead
+  </Link>
+</li>
+`;

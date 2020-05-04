@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm component renders SearchForm 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="Radiohead"
+  />
+  <button
+    onSubmit={[Function]}
+  >
+    Submit
+  </button>
+</form>
+`;

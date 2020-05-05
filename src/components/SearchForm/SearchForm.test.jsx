@@ -4,7 +4,7 @@ import SearchForm from './SearchForm';
 
 describe('SearchForm component', () => {
   it('renders SearchForm', () => {
-    const wrapper = shallow(<SearchForm artist={'Radiohead'} onArtistChange={() => {}} onSubmit={() => {}} />);
+    const wrapper = shallow(<SearchForm query={'Radiohead'} onQueryChange={() => {}} onSubmit={() => {}} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

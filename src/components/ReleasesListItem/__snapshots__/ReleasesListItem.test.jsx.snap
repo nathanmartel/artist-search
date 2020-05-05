@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReleasesListItem component renders ReleasesListItem 1`] = `
+<li
+  key="idstring"
+>
+  <Link
+    to="./OK Computer"
+  >
+    <img
+      alt="OK Computer cover"
+      src="http://coverartarchive.org/release/idstring/front"
+    />
+    <h4>
+      OK Computer
+    </h4>
+  </Link>
+</li>
+`;

@@ -4,7 +4,12 @@ import ReleasesListItem from '../../components/ReleasesListItem/ReleasesListItem
 
 const ReleasesList = ({ releases }) => {
   
-  const releasesResults = releases.map(release => <ReleasesListItem key={release.id} id={release.id} title={release.title} />);
+  const releasesResults = releases.map(release => 
+    <ReleasesListItem 
+      key={release.id} 
+      id={release.id} 
+      title={release.title}
+      coverArt={release['cover-art-archive'].front} />);
 
   return (
     <ul>

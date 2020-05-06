@@ -28,7 +28,7 @@ const useLyrics = (artist, title) => {
         console.log('song results are', results);
         setLyrics(results.lyrics);
       });
-  }, []);
+  }, [title]);
   return { lyrics };
 };
 
@@ -37,15 +37,20 @@ const useLyrics = (artist, title) => {
 const SongContainer = () => {
 
   const { song } = useParams();
+  // const [artist, setArtist] = useState('');
+  // const [title, setTitle] = useState('');
+
 
   const { artist, title } = useArtistInfo(song);
   const { lyrics } = useLyrics(artist, title);
 
   return (
     <>
-      There may not be any lyrics here, but there is an artist name ({artist}) and a title ({title})!
+      <p>There may not be any lyrics here, but there is an artist name ({artist}) and a title ({title})!</p>
       {lyrics && 
         <>
+          <br />
+          <p>On wait, there are lyrics here...</p>
           {lyrics}
         </> 
       }

@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchArtistInfoBySongId, fetchLyrics } from '../../services/services';
 
-const SongContainer = () => {
 
-  const { song } = useParams();
-  const [lyrics, setLyrics] = useState([]);
+const useArtistInfo = (song) => {
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
-  
 
   useEffect(() => {   
     fetchArtistInfoBySongId(song)
@@ -17,13 +14,32 @@ const SongContainer = () => {
         setArtist(results.artist);
         setTitle(results.title);
       });
-    // Well, chaining these breaks it... tried to async/await the fetch calls and no dice.
-    // fetchLyrics(artist, title)
-    //   .then(results => {
-    //     console.log('song results are', results);
-    //     setLyrics(results.lyrics);
-    //   });
   }, []);
+  return { artist, title };
+};
+
+
+const useLyrics = (artist, title) => {
+  const [lyrics, setLyrics] = useState([]);
+
+  useEffect(() => {   
+    fetchLyrics(artist, title)
+      .then(results => {
+        console.log('song results are', results);
+        setLyrics(results.lyrics);
+      });
+  }, []);
+  return { lyrics };
+};
+
+
+
+const SongContainer = () => {
+
+  const { song } = useParams();
+
+  const { artist, title } = useArtistInfo(song);
+  const { lyrics } = useLyrics(artist, title);
 
   return (
     <>

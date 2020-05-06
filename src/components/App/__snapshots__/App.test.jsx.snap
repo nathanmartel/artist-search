@@ -8,6 +8,16 @@ exports[`App component renders App 1`] = `
       <Route
         component={[Function]}
         exact={true}
+        path="/:artist/:release/:song"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/:artist/:release"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
         path="/:artist"
       />
       <Route

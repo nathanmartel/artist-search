@@ -12,3 +12,33 @@ export const fetchTracks = (query, limit = 10, page = 1) => {
   return fetch(`http://musicbrainz.org/ws/2/recording?release=${query}&fmt=json`)
     .then(res => res.json());
 };
+
+export const fetchLyrics = (artist, title) => {
+  return fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    .then(res => res.json());
+};
+
+// This breaks. Think I need to await the Promise to fill before proceeding to fetchLyrics??
+export const fetchLyricsBySongId = (songId) => {
+  return fetch(`https://musicbrainz.org/ws/2/recording/${songId}?inc=artist-credits&fmt=json`)
+    .then(res => res.json())
+    .then(json => ({
+      id: json.id,
+      artist: json['artist-credit'][0].artist.name,
+      title: json.title
+    }))
+    .then(obj => fetchLyrics(obj.artist, obj.title))
+    .then(res => res.json())
+    .then(json => console.log('lyrics?', json));
+};
+
+export const fetchArtistInfoBySongId = (songId) => {
+  return fetch(`https://musicbrainz.org/ws/2/recording/${songId}?inc=artist-credits&fmt=json`)
+    .then(res => res.json())
+    .then(json => ({
+      id: json.id,
+      artist: json['artist-credit'][0].artist.name,
+      title: json.title
+    }));
+};
+

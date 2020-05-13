@@ -5,7 +5,7 @@ exports[`ReleasesListItem component renders ReleasesListItem 1`] = `
   key="idstring"
 >
   <Link
-    to={[Function]}
+    to="/release/idstring"
   >
     <img
       alt="OK Computer cover"

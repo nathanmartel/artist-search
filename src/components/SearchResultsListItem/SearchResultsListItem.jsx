@@ -6,7 +6,7 @@ import './SearchResultsListItem.css';
 const SearchResultsListItem = ({ id, name }) => {
   return (
     <li key={id}>
-      <Link to={`./${id}`}>{ name }</Link>
+      <Link to={`/artist/${id}`}>{ name }</Link>
     </li>
   );
 };

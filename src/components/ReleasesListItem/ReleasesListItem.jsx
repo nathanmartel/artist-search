@@ -7,7 +7,7 @@ const ReleasesListItem = ({ id, title, coverArt }) => {
   
   return (
     <li key={id}>
-      <Link to={location => `${location.pathname}/${id}`}>
+      <Link to={`/release/${id}`}>
         <img src={coverArt 
           ? `http://coverartarchive.org/release/${id}/front`
           : 'https://static1.squarespace.com/static/5d2e2c5ef24531000113c2a4/5d392a924397f100011fa30e/5e3a25cd835c71275a63090f/1584294919598/?format=1500w'} 

@@ -5,7 +5,7 @@ exports[`SearchResultsListItem component renders SearchResultsListItem 1`] = `
   key="idstring"
 >
   <Link
-    to="./idstring"
+    to="/artist/idstring"
   >
     Radiohead
   </Link>

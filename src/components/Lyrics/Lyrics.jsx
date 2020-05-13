@@ -6,7 +6,7 @@ const TrackListItem = ({ id, title, length }) => {
   
   return (
     <li key={id}>
-      <Link to={location => `${location.pathname}/${id}`}>
+      <Link to={`/song/${id}`}>
         {title} ({length})
       </Link>
     </li>
